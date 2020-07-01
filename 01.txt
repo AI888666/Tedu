@@ -1,0 +1,28 @@
+练习１
+
+1. 匹配一个邮箱格式的字符串
+xxxx@xxx.com
+xxxx@xxx.cn
+
+re.findall(r"\w+@\w+\.com|\w+@\w+\.cn","wangwc@tedu.cn,lnih@126.com")
+
+2. 获取大写字母开头的单词
+Hello I A CBD iPython(不算)
+
+re.findall(r"\b[A-Z]\w*","Hello I am world A CBD iPython")
+
+
+练习２
+1. 匹配一段文字中所有数字包含
+    整数　小数　正数　负数　百分数　分数
+    12    1.6  11.5 -5   46.6%  1/8
+
+    re.findall(r"-?\d+\.?/?\d*%?", "12    1.6  11.5 -5   46.6%  1/8")
+
+2. 匹配一个IPv4地址
+    re.search(r"(\d{1,3}\.){3}\d{1,3}")
+
+3. 匹配一个身份号
+    1. re.findall(r"\d+","123456734564387592")
+    2. re.findall(r"\d{18}+","123456734564387592")
+    3. re.search(r"\d{17}(\d|\x)","12345673456438759x") grop()
